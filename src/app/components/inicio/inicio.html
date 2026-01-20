@@ -1,0 +1,6 @@
+<h1>Bienvenidos a la pagina multimedia de la {{titulo}}</h1>
+<button (click)="pulsar()">Pulsar</button>
+@if (pulsaciones > 0) {
+    <p>Has pulsado {{pulsaciones}} veces.</p>
+    <button (click)="pulsaciones = 0">Reset</button>
+}
