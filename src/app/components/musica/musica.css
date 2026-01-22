@@ -2,3 +2,36 @@ img {
     width: 200px;
     height: 200px;
 }
+
+.green {
+    color: green;
+    background-color: lightgray;
+    width: 200px;
+}
+
+.blue {
+    color: blue;
+    background-color: lightgray;
+    width: 200px;
+}
+
+.recordCard {
+    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #ecc9bc, #e64f14) border-box !important;
+    border: 2px solid transparent;
+    margin-bottom: 15px;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-width: 4px;
+    &:hover {
+        transform: scale(1.1);
+        
+    }
+}
+
+.recordContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}

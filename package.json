@@ -37,6 +37,7 @@
     "@angular/build": "^21.1.0",
     "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^21.1.0",
+    "@faker-js/faker": "^10.2.0",
     "angular-eslint": "21.1.0",
     "eslint": "^9.39.1",
     "jsdom": "^27.1.0",
