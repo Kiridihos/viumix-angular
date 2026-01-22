@@ -1,1 +1,91 @@
-<p>Page not found <b>404</b></p>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada</title>
+    <style>
+        /* Estilos base para centrar todo */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0f172a;
+            /* Azul muy oscuro */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            background: linear-gradient(45deg, #007bff, #ff007b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        /* El botón con el borde degradado y efectos que vimos */
+        .btn-regresar {
+            text-decoration: none;
+            color: white;
+            padding: 12px 30px;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 8px;
+            /* Para bordes redondeados */
+
+            /* Técnica de borde degradado con relleno */
+            border: 3px solid transparent;
+            background:
+                linear-gradient(#0f172a, #0f172a) padding-box,
+                linear-gradient(45deg, #007bff, #ff007b) border-box;
+            background-origin: border-box;
+
+            /* Transición en el estado base para suavidad */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto de agrandar al hacer hover */
+        .btn-regresar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Clase para cuando el botón sea el "seleccionado" o clickeado */
+        .btn-regresar:active {
+            background:
+                linear-gradient(45deg, #007bff, #ff007b) padding-box,
+                linear-gradient(45deg, #007bff, #ff007b) border-box;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>404</h1>
+        <h2>¡Vaya! Te has perdido en el espacio.</h2>
+        <p>La página que buscas no existe o ha sido movida a otra dimensión.</p>
+
+        <a href="/" class="btn-regresar">Volver al Inicio</a>
+    </div>
+
+</body>
+
+</html>

@@ -13,6 +13,7 @@ export const routes: Routes = [
     { path: 'inicio', component: Inicio},
     { path: 'musica', component: Musica},
     { path: 'cine', component: Cine},
+    { path: 'cine/:genero', component: Cine},
     { path: 'libros', component: Libros},
     { path: 'contacto', component: Contacto},
     { path: 'podcasts', component: Podcasts},

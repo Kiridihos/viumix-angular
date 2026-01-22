@@ -15,10 +15,33 @@ nav.menu_principal ul>li {
     display: inline-block;
     padding: 15px;
     height: 30px;
+    border: 4px solid transparent;
+    border-radius: 20px;
+    background:
+        linear-gradient(white, white) padding-box,
+        /* Color de fondo interno */
+        linear-gradient(45deg, #ffffff, #e64f14) border-box;
+    /* Color del borde */
+    /*  */
+    background-origin: border-box;
     line-height: 30px;
+    &:hover {
+        transform: scale(1.2);
+    }
+    
 }
 
 nav.menu_principal ul>li>a {
     text-decoration: none;
     color: black;
+}
+
+.seleccionado {
+    border: 4px solid transparent !important;
+    background:
+        linear-gradient(#ffffff, #e64f14) padding-box,
+        linear-gradient(45deg, #e64f14, #ffffff) border-box !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    color: rgb(255, 255, 255) !important;
 }

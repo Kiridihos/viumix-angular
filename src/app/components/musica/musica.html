@@ -1,1 +1,9 @@
-<p>musica works!</p>
+<h1>Discos disponibles</h1>
+@for (record of records; track $index) {
+<h2>{{ record.title }}</h2>
+<p>Artista: {{ record.artist }}</p>
+<p>Año: {{ record.year }}</p>
+<p>Album: {{ record.album }}</p>
+<img [src]="record.cover" [alt]="record.title" />
+<hr>
+}
