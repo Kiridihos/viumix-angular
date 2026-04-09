@@ -1,0 +1,15 @@
+img {
+    float: left;
+    height: 20px;
+}
+
+span {
+    margin-left: 10px;
+    font-size: 14px;
+    padding: initial;
+}
+
+.song-container {
+    display: flex;
+    align-items: center;
+}

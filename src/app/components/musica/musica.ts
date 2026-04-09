@@ -1,107 +1,92 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faker } from '@faker-js/faker';
+import { DiscoModel } from '../../models/disco';
+import { CancionModel } from '../../models/cancion';
+import { Cancion } from '../cancion/cancion';
 
 @Component({
   selector: 'app-musica',
-  imports: [CommonModule],
+  imports: [CommonModule, Cancion],
   templateUrl: './musica.html',
   styleUrl: './musica.css',
 })
 export class Musica {
-  public records: Array<any> = [];
+  public records: Array<DiscoModel> = [];
+  public playing: string;
   constructor() {
+    this.playing = '';
     this.records = [
-      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2023 }),
-        cover: 'https://picsum.photos/200/300?random=1'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=2'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=3'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=4'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=5'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=6'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=7'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=8'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=3'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=4'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=5'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=6'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=7'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=8'
-      },      {
-        title: faker.music.songName(),
-        artist: faker.music.artist(),
-        album: faker.music.album(),
-        year: faker.number.int({ min: 1990, max: 2024 }),
-        cover: 'https://picsum.photos/200/300?random=9'
-      }];
+      new DiscoModel(1, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=1', [
+        new CancionModel(1, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 1),
+        new CancionModel(2, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 1),
+        new CancionModel(3, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 1),
+      ]),
+      new DiscoModel(2, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=2', [
+        new CancionModel(4, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 2),
+        new CancionModel(5, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 2),
+        new CancionModel(6, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 2),
+      ]),
+      new DiscoModel(3, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=3', [
+        new CancionModel(7, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 3),
+        new CancionModel(8, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 3),
+        new CancionModel(9, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 3),
+      ]),
+      new DiscoModel(4, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=4', [
+        new CancionModel(10, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 4),
+        new CancionModel(11, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 4),
+        new CancionModel(12, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 4),
+      ]),
+      new DiscoModel(5, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=5', [
+        new CancionModel(13, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 5),
+        new CancionModel(14, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 5),
+        new CancionModel(15, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 5),
+      ]),
+      new DiscoModel(6, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=6', [
+        new CancionModel(16, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 6),
+        new CancionModel(17, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 6),
+        new CancionModel(18, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 6),
+      ]),
+      new DiscoModel(7, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=7', [
+        new CancionModel(19, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 7),
+        new CancionModel(20, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 7),
+        new CancionModel(21, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 7),
+      ]),
+      new DiscoModel(8, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=8', [
+        new CancionModel(22, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 8),
+        new CancionModel(23, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 8),
+        new CancionModel(24, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 8),
+      ]),
+      new DiscoModel(9, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=9', [
+        new CancionModel(25, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 9),
+        new CancionModel(26, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 9),
+        new CancionModel(27, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 9),
+      ]),
+      new DiscoModel(10, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=10', [
+        new CancionModel(22, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 10),
+        new CancionModel(23, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 10),
+        new CancionModel(24, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 10),
+      ]),
+      new DiscoModel(11, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=11', [
+        new CancionModel(25, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 11),
+        new CancionModel(26, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 11),
+        new CancionModel(27, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 11),
+      ]),
+      new DiscoModel(12, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=12', [
+        new CancionModel(28, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 12),
+        new CancionModel(29, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 12),
+        new CancionModel(30, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 12),
+      ]),
+      new DiscoModel(13, faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'https://picsum.photos/200/300?random=13', [
+        new CancionModel(31, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 13),
+        new CancionModel(32, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 13),
+        new CancionModel(33, faker.music.songName(), faker.music.artist(), faker.music.album(), faker.number.int({ min: 1990, max: 2023 }), 'http://cdn.freesound.org/previews/842/842586_7395592-lq.mp3', 13),
+      ]),
+    ];
   }
+  reproducirCancionPadre(song: CancionModel) {
+    console.log('Reproduciendo canción desde el componente padre:', song);
+    this.playing = `Reproduciendo: ${song.title} del artista ${song.artist}`;
+  }
+    
 }
