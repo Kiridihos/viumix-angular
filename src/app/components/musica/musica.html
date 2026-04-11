@@ -1,15 +1,16 @@
 <h1>Musica VIU</h1>
+<audio id="audio_player" controls></audio>
 @if (playing) {
 <h2>{{ playing }}</h2>
 }
 <div class="recordContainer">
-    @for (record of records; track $index) {
+    @for (record of records(); track $index) {
     <div class="recordCard">
-        <h2>{{ record.album| uppercase}}</h2>
+        <h2>{{ record.title | uppercase }}</h2>
         <p>Artista: {{ record.artist }}</p>
         <p [ngClass]="{'green': record.year > 2000, 'blue': record.year <= 2000}">Año: {{ record.year }}</p>
-        <p>Album: {{ record.album }}</p>
-        <img [src]="record.cover" [alt]="record.album" />
+        <p>Album: {{ record.title }}</p>
+        <img [src]="record.image_path" [alt]="record.title" />
         <hr>
         <h3>Canciones</h3>
         <div class="list-songs">

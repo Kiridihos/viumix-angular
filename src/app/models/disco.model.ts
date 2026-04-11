@@ -1,11 +1,11 @@
-import { CancionModel } from './cancion';
+import { CancionModel } from './cancion.model';
 export class DiscoModel {
     constructor(
         public id: number,
         public artist: string,
-        public album: string,
+        public title: string,
         public year: number,
-        public cover: string,
+        public image_path: string,
         public songs: Array<CancionModel> = []) {
     }
 }

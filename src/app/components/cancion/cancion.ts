@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CancionModel } from '../../models/cancion';
+import { CancionModel } from '../../models/cancion.model';
 
 @Component({
   selector: 'app-cancion',
